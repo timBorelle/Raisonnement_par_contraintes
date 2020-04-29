@@ -1,12 +1,9 @@
 package choco_solver;
 
-import java.util.List;
-import jdk.nashorn.internal.objects.NativeArray;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solution;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.exception.ContradictionException;
-import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
 
 /*
@@ -21,6 +18,7 @@ public class NQueens {
         Model model = new Model("NQueens");
     
         IntVar[] R = model.intVarArray("R", SIZE, 0, SIZE-1);
+        //model.allDifferent(R).post();
         
         // row i, column j
         // set constraints : |Ri-Rj| != j-i for all j > i
