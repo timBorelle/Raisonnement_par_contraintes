@@ -9,11 +9,15 @@ import org.chocosolver.solver.variables.IntVar;
 
 /**
  * Magic Square Skeleton
+ * 
+ * n=7 : 5s
+ * n=8 : much time
  */
 public class MagicSquareSkeleton extends MagicSquareAbstract {
 
     public static void main(String... args) {
-        MagicSquareAbstract m = new MagicSquareSkeleton(8);
+        int n = 7;
+        MagicSquareAbstract m = new MagicSquareSkeleton(n);
         if (m.solveMagicSquare()) {
             m.printMagicSquare();
         }
