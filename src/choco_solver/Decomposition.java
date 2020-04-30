@@ -24,7 +24,9 @@ public class Decomposition {
         
         IntVar[] vars = model.intVarArray("vars", N, 0, N);
         model.sum(vars, "=", N).post();
-        model.regular(vars, new FiniteAutomaton("[1-5]*[0]*")).post();
+        //model.regular(vars, new FiniteAutomaton("[1-5]*[0]*")).post();
+        // ER pour forcer les 0 à la fin
+        model.regular(vars, new FiniteAutomaton("[1-<"+N+">]+0*")).post();
         
         Solver solver = model.getSolver();
         
